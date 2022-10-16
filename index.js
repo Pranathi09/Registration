@@ -2,29 +2,29 @@ const http = require('http');
 const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2));
 
-let HomePage;
-let ProjectPage;
-let RegistrationPage;
-let RegistrationScript;
+let homePage;
+let projectPage;
+let registrationPage;
+let registrationScript;
 
 fs.readFile("home.html", (err, data) => {
     if (err) throw err;
-    HomePage = data.toString();
+    homePage = data.toString();
 })
 
 fs.readFile("project.html", (err, data) => {
     if (err) throw err;
-    ProjectPage = data.toString();
+    projectPage = data.toString();
 })
 
 fs.readFile("registration.html", (err, data) => {
     if (err) throw err;
-    RegistrationPage = data.toString();
+    registrationPage = data.toString();
 })
 
 fs.readFile("script.js", (err, data) => {
     if (err) throw err;
-    RegistrationScript = data.toString();
+    registrationScript = data.toString();
 })
 
 http.createServer((request, response) => {
